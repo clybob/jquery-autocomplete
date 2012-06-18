@@ -80,7 +80,8 @@
         delimiterChar: ',',
         delimiterKeyCode: 188,
         processData: null,
-        onError: null
+        onError: null,
+        onSuccess: null
     };
 
     /**
@@ -827,6 +828,7 @@
                 this.focusItem($first);
             }
             this.active_ = true;
+            this.callHook('onSuccess');
         } else {
             this.hideResults();
             this.active_ = false;
